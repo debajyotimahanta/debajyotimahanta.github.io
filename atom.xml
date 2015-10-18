@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Debajyoti Mahanta]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://www.dmahanta.com/"/>
+  <updated>2015-10-18T04:00:38.000Z</updated>
+  <id>http://www.dmahanta.com/</id>
+  
+  <author>
+    <name><![CDATA[Debajyoti Mahanta]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Invalid permissions on Lambda function when using API Gateway]]></title>
+    <link href="http://www.dmahanta.com/2015/10/17/Invalid-permissions-on-Lambda-function-when-using-API-Gateway/"/>
+    <id>http://www.dmahanta.com/2015/10/17/Invalid-permissions-on-Lambda-function-when-using-API-Gateway/</id>
+    <published>2015-10-18T03:45:35.000Z</published>
+    <updated>2015-10-18T04:00:38.000Z</updated>
+    <content type="html"><![CDATA[<p>Lately i was working with micro service and leveraging AWS to crete a serverless infrastucture. To achieve this i was using <a href="https://aws.amazon.com/lambda/" target="_blank" rel="external">aws lambda</a> as the service host with <a href="https://aws.amazon.com/api-gateway/" target="_blank" rel="external">aws api gateway</a> as the entry point. However i ran into a strage problem. I had to update my IAM policy for a lambda function, after doing that when i went back and tested the lambda function it worked fine. I was able to access the dynamodb and it worked. However when i tried to access it via API it failed. I got the following error<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Execution failed due to configuration error: Invalid permissions on Lambda <span class="function"><span class="keyword">function</span></span></span><br></pre></td></tr></table></figure></p>
+<p>The error looks wiered because the Lambda did have access.  I played around with access, but couldnt find anything. Eventually i came across this <a href="https://www.youtube.com/watch?v=H4LM_jw5zzs" target="_blank" rel="external">video</a>. Apprently all i had to is goto to Integration Requst and edit the lamda function and just resave it. When we save it back, it prompts saying lambda will be given permission and that solved the issue.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Lately i was working with micro service and leveraging AWS to crete a serverless infrastucture. To achieve this i was using <a href="http]]>
+    </summary>
+    
+      <category term="api" scheme="http://www.dmahanta.com/tags/api/"/>
+    
+      <category term="aws" scheme="http://www.dmahanta.com/tags/aws/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Meetup on AngularJS Home Automation]]></title>
+    <link href="http://www.dmahanta.com/2015/10/08/meetup-on-angularjs-home-automation/"/>
+    <id>http://www.dmahanta.com/2015/10/08/meetup-on-angularjs-home-automation/</id>
+    <published>2015-10-08T05:56:33.000Z</published>
+    <updated>2015-10-08T06:07:20.000Z</updated>
+    <content type="html"><![CDATA[<p>Bloggin after a long time. Its been a while. Busy helping out a friends startup, and doing some mobile developement. Mobile is getting big even in my work life, where we have decided to go ahead with Xamarin. But MDM is still up in the air, so the Mac on my work is gathering dust right now, as no Xamarin iOS developement is going on. Anwyays, for this starup i have been using <a href="http://ionicframework.com/" target="_blank" rel="external">Ionic</a> which is angularjs + cordova. Its a good mix. As long as you try to stick with basic developement it works great. But if you try to get native feature it works, but i have few complaines about anrdoid version compatibility. So have been playing around with that a lot. When a got a email from <a href="https://twitter.com/mdkhan005" target="_blank" rel="external">M.D.Khan</a>, about giving a talk about a topic i posted long time back about Home Automation using angularjs. I actually created a basic POC for angular conference, but it didnt get selected. Here is the link to the <a href="http://www.meetup.com/Ionic-CHI/events/225727929/" target="_blank" rel="external">Meetup</a>. Its already house full, which makes me nervous and puts more pressure.<br>In the near future i will be creating a few more tutorials around what i build and how its done. So stay tuned.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Bloggin after a long time. Its been a while. Busy helping out a friends startup, and doing some mobile developement. Mobile is getting bi]]>
+    </summary>
+    
+      <category term="angularjs" scheme="http://www.dmahanta.com/tags/angularjs/"/>
+    
+      <category term="hardware" scheme="http://www.dmahanta.com/tags/hardware/"/>
+    
+      <category term="ionic" scheme="http://www.dmahanta.com/tags/ionic/"/>
+    
+      <category term="iot" scheme="http://www.dmahanta.com/tags/iot/"/>
+    
+      <category term="javascript" scheme="http://www.dmahanta.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[FirstOpenSourceProject]]></title>
+    <link href="http://www.dmahanta.com/2014/07/03/firstopensourceproject/"/>
+    <id>http://www.dmahanta.com/2014/07/03/firstopensourceproject/</id>
+    <published>2014-07-03T05:45:07.000Z</published>
+    <updated>2014-07-03T05:57:12.000Z</updated>
+    <content type="html"><![CDATA[<p>First cut of Lycn presence awareness javascript library. I just release the working code. There are still few pending items, like getting the test coverage to be 100% making gulp work to do a CI etc, but  i need to get this working copy out as it was dependent on another project i was working on. You can find more details about this project in the <a href="https://github.com/debajyotimahanta/LyncPressence" target="_blank" rel="external">github repo</a>. I am use coffee script for both creating the app as well as for testing. I havent uploaded the test cases, but you can take look at it if you see the commit log. The reason the latest commit doesnt have it is because i had to use the window object and Mocha doesnt support window. I had to integrate it with PhantomJS or something like that, for which i had to create a index.html too, so more work, which i know will have to do. But i wanted to get this out there first. In addition to this i also wanted to see how much traction it gets. If see good response i am willing to work more on it.<br>So looking forward for your feedback and suggestions.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>First cut of Lycn presence awareness javascript library. I just release the working code. There are still few pending items, like getting]]>
+    </summary>
+    
+      <category term="bower" scheme="http://www.dmahanta.com/tags/bower/"/>
+    
+      <category term="coffescript" scheme="http://www.dmahanta.com/tags/coffescript/"/>
+    
+      <category term="javascript" scheme="http://www.dmahanta.com/tags/javascript/"/>
+    
+      <category term="lync" scheme="http://www.dmahanta.com/tags/lync/"/>
+    
+      <category term="microsfot" scheme="http://www.dmahanta.com/tags/microsfot/"/>
+    
+      <category term="opensource" scheme="http://www.dmahanta.com/tags/opensource/"/>
+    
+      <category term="sharepoint.html" scheme="http://www.dmahanta.com/tags/sharepoint-html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[gulp_vs_grunt]]></title>
+    <link href="http://www.dmahanta.com/2014/06/11/gulp_vs_grunt/"/>
+    <id>http://www.dmahanta.com/2014/06/11/gulp_vs_grunt/</id>
+    <published>2014-06-12T04:37:58.000Z</published>
+    <updated>2014-06-12T04:48:11.000Z</updated>
+    <content type="html"><![CDATA[<p>So <a href="https://twitter.com/hashtag/windycityhack?src=hash" target="_blank" rel="external">#WinndyCityHack</a> was over a week back. Couldnt gt anything done so didnt do a demo. Hopefully in the next hack we can showcase something. I didnt build any IoT stuff which i was planning because i had made the proejct to complicated for the time frame. Let see how it works out in the next hackathon.</p>
+<p>So in the meantime work required me to build a few javscript apps, and i have been using backbone and TDD via mocha and chai. Its all working out great so far. I am also using grunt as a build tool, and its really nice, then while using grunt i came across, gulp and that was really hooked into it. It uses node.js streams to piple tasks together and hence makes the process super fsat, not that grunt was slow, but its more cleaner and easier to understand.</p>
+<p>So far my experiance with gulp is nothing but great. I highly recommed it to anyone who wants to use a build tool for client side or javascript projects. But i does lack maturity and access to plugins that grunt comes with. But its growing and i am pretty sure it will overtake or atleast be at par with grunt pretty soon. </p>
+<p>I will post my finding in my next blog post, about gulp and what itresting thing i learnt from it.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>So <a href="https://twitter.com/hashtag/windycityhack?src=hash" target="_blank" rel="external">#WinndyCityHack</a> was over a week back. ]]>
+    </summary>
+    
+      <category term="CI" scheme="http://www.dmahanta.com/tags/CI/"/>
+    
+      <category term="devops" scheme="http://www.dmahanta.com/tags/devops/"/>
+    
+      <category term="grunt" scheme="http://www.dmahanta.com/tags/grunt/"/>
+    
+      <category term="gulp" scheme="http://www.dmahanta.com/tags/gulp/"/>
+    
+      <category term="node.js" scheme="http://www.dmahanta.com/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Getting started with Raspberry Pi]]></title>
+    <link href="http://www.dmahanta.com/2014/05/16/getting-started-with-raspberry-pi/"/>
+    <id>http://www.dmahanta.com/2014/05/16/getting-started-with-raspberry-pi/</id>
+    <published>2014-05-17T02:37:11.000Z</published>
+    <updated>2014-05-17T04:28:31.000Z</updated>
+    <content type="html"><![CDATA[<p>Got my Raspberry Pi today, so i decided since i have some time might as well try to load the OS on it. I  followed this <a href="http://www.raspberrypi.org/help/noobs-setup/" target="_blank" rel="external">link</a> to load the OS on the board. Worked like a charm. I choose Raspbian as the image, because i think thats whats recommended and most of the blogs use that. Plan to play around with it and then decide if i need to switch it to something else. It took around 5-10 min for the whole setup to complete, but i didnt have to do anything to it. It was fairly straight forward, considering what i had to do to install Linux in my college days(create partion which has to in primary sector etc etc)<br>I also got a <a href="https://www.sparkfun.com/products/11713" target="_blank" rel="external">wifi module</a> and got that to work with the board, by following the instructions listed in the <a href="https://learn.sparkfun.com/tutorials/using-pcduinos-wifi-dongle-with-the-pi" target="_blank" rel="external">site</a>. So all set for <a href="http://en.wikipedia.org/wiki/Internet_of_Things" target="_blank" rel="external">IoT</a> what do i do with it next, any ideas?</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Got my Raspberry Pi today, so i decided since i have some time might as well try to load the OS on it. I  followed this <a href="http://w]]>
+    </summary>
+    
+      <category term="DIY" scheme="http://www.dmahanta.com/tags/DIY/"/>
+    
+      <category term="IoT" scheme="http://www.dmahanta.com/tags/IoT/"/>
+    
+      <category term="raspberry pi" scheme="http://www.dmahanta.com/tags/raspberry-pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[jquery deferred vs async $.when]]></title>
+    <link href="http://www.dmahanta.com/2014/05/09/jquery-defered-vs-asynch/"/>
+    <id>http://www.dmahanta.com/2014/05/09/jquery-defered-vs-asynch/</id>
+    <published>2014-05-10T04:01:09.000Z</published>
+    <updated>2014-05-10T04:36:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Haven’t bloged for sometime. Had gone back to India for a few months and with the Internet speed back in Guwahati, it was hard getting work done leave aside, bloging. But anyways i had a good time, however since the title of this post is not my vacation time, but rather jquery deferred i will stop.<br>Recently as part of sharepoint app development i have been doing a lot of javascript. While doing that i came across a scenario where i had to make multiple ajax call, and wait for the response to render the view. Something like this<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">http.get(<span class="string">'api/employmenttype'</span>, <span class="literal">null</span>, <span class="literal">false</span>)</span><br><span class="line">            .done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'loaded: employmenttype'</span>);</span><br><span class="line">                vm.lookups.allEmploymentTypes(response);</span><br><span class="line">    &#125;);    </span><br><span class="line">http.get(<span class="string">'api/actionlist'</span>, <span class="literal">null</span>, <span class="literal">false</span>)</span><br><span class="line">    .done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'loaded: actionlist'</span>);</span><br><span class="line">        vm.lookups.allActionListOptions(response);</span><br><span class="line">    &#125;);  </span><br><span class="line"></span><br><span class="line">    view.render()</span><br></pre></td></tr></table></figure></p>
+<p>As you can see above i am using <code>false</code> so that the method is asych. The drawback to this is that its blocking code and does the executing in sequence. Ideally i should be able to call them in parallel and when complete combine them.</p>
+<p>Thats exactly what my next set of code will do </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.when(</span><br><span class="line">        http.get(<span class="string">'api/employmenttype'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: employmenttype'</span>);</span><br><span class="line">            vm.lookups.allEmploymentTypes(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        http.get(<span class="string">'api/actionlist'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: actionlist'</span>);</span><br><span class="line">            vm.lookups.allActionListOptions(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        http.get(<span class="string">'api/company'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: company'</span>);</span><br><span class="line">            vm.lookups.allCompanies(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="comment">// … some more</span></span><br><span class="line">        ).done(view.render());</span><br></pre></td></tr></table></figure>
+<p>This is how we should be doing it. Its much better way to do asych programing. So basically what <code>when</code> does is it waits for each ajax call to complete or in javascript world promise to complete before it executes the done function. Also the ajax calls can now we asyc, i didnt pass a `false; to the get method.<br>In addition I think there is something call defer, but i havent gone in details on what that does as of today. But there is a nice article listed <a href="http://www.bitstorm.org/weblog/2012-1/Deferred_and_promise_in_jQuery.html" target="_blank" rel="external">here</a> you might wanna take a look.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Haven’t bloged for sometime. Had gone back to India for a few months and with the Internet speed back in Guwahati, it was hard getting wo]]>
+    </summary>
+    
+      <category term="clientside" scheme="http://www.dmahanta.com/tags/clientside/"/>
+    
+      <category term="javascript" scheme="http://www.dmahanta.com/tags/javascript/"/>
+    
+      <category term="jquery" scheme="http://www.dmahanta.com/tags/jquery/"/>
+    
+      <category term="node" scheme="http://www.dmahanta.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Apps for SharePoint]]></title>
+    <link href="http://www.dmahanta.com/2013/11/15/apps-for-sharepoint/"/>
+    <id>http://www.dmahanta.com/2013/11/15/apps-for-sharepoint/</id>
+    <published>2013-11-15T06:09:00.000Z</published>
+    <updated>2013-12-06T05:16:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Have been busy with work, but i still havent given up on migrating this blog over to node. In the mean time, i have been working a lot SharePoint, weather i like it or not. I thought i like the new app model for sharepoint, but the more deep i get, the more i lose hope on it. Its good thought, however i think its still has a long way to go before it can be matured enought. The reason i say that is because if i follow a provider hosted app vs auto hosted or sharepoint hosted <a href="http://msdn.microsoft.com/en-us/library/office/fp179930.aspx" target="_blank" rel="external">link</a>, i am dommed. The boiler plate code provided by microsoft is only assuming you are hosted in IIS and using the same AD provider. If you have a differenet federation provider i couldnt find any code for it and plus it gets fairly complicated. So i had to roll back and use CSOM model and use elevate privalges to run my code. It suffices my need as all i wanted was to read data. However in future if i need to take into account user context, this approach would not work.<br>Ok lets move back to apps. So i was looking and using cross site domain library to levrage javascript to query other sharepoint list <a href="http://blogs.technet.com/b/tothesharepoint/archive/2013/02/19/an-introduction-to-cross-site-publishing.aspx" target="_blank" rel="external">link</a>. So far it looks promising, and seems a better approach. However i dont like the way it create a domain on the fly to reigster these apps. I guess thats how Micorosft thought would be better and i think for security reasons.<br>Anyways so far i was able to<br>1.Create a wild card domain<br>2.Get on the fly domain working use the above wild card domain<br>3.Enable proper trust in appmanifest.xml<br>4.Now pending is calling this app from a completly outside application using javascript.<br>Look out for my next post on this</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Have been busy with work, but i still havent given up on migrating this blog over to node. In the mean time, i have been working a lot Sh]]>
+    </summary>
+    
+      <category term="SharePoint 2013 Apps Security cross-site" scheme="http://www.dmahanta.com/tags/SharePoint-2013-Apps-Security-cross-site/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Moving to node.js and Azure or AWS]]></title>
+    <link href="http://www.dmahanta.com/2013/10/19/moving-my-blog-to-node-and-azure/"/>
+    <id>http://www.dmahanta.com/2013/10/19/moving-my-blog-to-node-and-azure/</id>
+    <published>2013-10-20T03:36:00.000Z</published>
+    <updated>2013-12-06T05:16:30.000Z</updated>
+    <content type="html"><![CDATA[<p>So its been a while since my last post. I have busy as my 1 year old has started walking and i spend most of the time after work running after him. In addition to this, work has been hectic, not that i am complaining, actually getting to learn a lot of things thanks to <a href="https://twitter.com/luisbocaletti" target="_blank" rel="external">@luisbocaletti</a>. I also went to some great conference, and got to meet and see a few open source projects happing in the .net and Microsoft world, and how Microsoft is promoting a lot for node.js. I really like node.js and how its light weight and you can easily, bring up a text editor and start coding. That was also the reason i started learning Ruby and hence blogged using octopress. However i havent had much luck actually using Ruby is real world. Probably because of work. However i do use javascript a lot, and familar with the code. Hence i am thinking of moving this blog to a node.js platform and probably host it in Azure or AWS. Still contemplating the decision. Hope fully next time i blog, it will be not using Octopress but something else.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>So its been a while since my last post. I have busy as my 1 year old has started walking and i spend most of the time after work running ]]>
+    </summary>
+    
+      <category term="aws" scheme="http://www.dmahanta.com/tags/aws/"/>
+    
+      <category term="azure" scheme="http://www.dmahanta.com/tags/azure/"/>
+    
+      <category term="cloud" scheme="http://www.dmahanta.com/tags/cloud/"/>
+    
+      <category term="javascript" scheme="http://www.dmahanta.com/tags/javascript/"/>
+    
+      <category term="node" scheme="http://www.dmahanta.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Sharepoint 2010 Application Load Balancing and farm trust]]></title>
+    <link href="http://www.dmahanta.com/2013/06/20/sharepoint-2010-application-load-balancing-and-farm-trust/"/>
+    <id>http://www.dmahanta.com/2013/06/20/sharepoint-2010-application-load-balancing-and-farm-trust/</id>
+    <published>2013-06-21T03:19:00.000Z</published>
+    <updated>2013-12-06T05:16:30.000Z</updated>
+    <content type="html"><![CDATA[<p>I have been recently working on a sharepoint2010 to 2013 migration project, and even though this might not be related to migration we stumbled upon an issue, which took forver to be resolved. Before i dive into the issue, let me explain the background and give you a run down of what was happening.</p>
+<p>###Background<br>As a part of the migration, we where moving existing application from a fairly open data center to a location where everything is locked down. So when we did the move, we found that another farm, which was consuming the Managed Metadata service, wasn’t able to do this. This was expected, and we knew we had to open up firewalls, but what firewalls. Internally sharepoint user topology service to expose all its end points published as a service. So what we ended up doing is opening the firewall between two servers, which enable traffic over 32844 and 32843.(Prior to this we also had to setup trust and all the stuff require to publish managed metadata across farm. More can be found this this <a href="http://blogs.msdn.com/b/spses/archive/2011/11/28/managed-metadata-taxonomy-amp-more.aspx" target="_blank" rel="external">article</a>).</p>
+<p>###Error<br>So ideally this should work, and in a way it did. When we try to connect to our farm form the external farm, we where able to see all the service and even add them. However thats all we could do. We couldn’t consume the services. After reviewing the log we found this error<br>    Microsoft.SharePoint.SPException: Addresses for this application have not yet been fetched. </p>
+<p>###Solution<br>After chaning our logs to be verbose, we found that sharepoint was trying not only connect to the application server where the service was hosted but also to the other servers in the fram. Why, even though the service was turned off? Till date i couldn’t figure out. However i learned that sharepoint internal does some kind of load balancing on its own for the topology service and since we hadn’t open up the entire farm to each other, we where getting the error as it couldn’t fetch the other site via the url.(More details about load balancing can be found <a href="http://blogs.msdn.com/b/besidethepoint/archive/2011/02/19/how-i-learned-to-stop-worrying-and-love-the-sharepoint-topology-service.aspx" target="_blank" rel="external">here</a>)</p>
+<p>###Conslusion<br>So after opening up ports between all the servers in the farm we where able to consume the Managed Metadata Service as well as view it from the other farm. So opening just the ports to the app server isn’t sufficient because of Sharepoint’s internal load balancing feature, which i know is being done with the right thoughts in mind. We want to make the service highly available. However we missed this one small thing, and it caused us a lot of pain and time. Also as a side note, we even tried to spoof this, but creating an entry in the DNS so that all url/server point to one IP, which is of the server to which the port is open. However this didnt help because the SSL certificate for some reason goofed up and we get error related to SSL/TSL trust issue as WCF level. So we can conclude that there is no option but to open up the firewalls for the entire farm. If there are other ways to get around this, i will surely like to know and fell free to drop me a line and we can hook up.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I have been recently working on a sharepoint2010 to 2013 migration project, and even though this might not be related to migration we stu]]>
+    </summary>
+    
+      <category term="Sharepoint2013 Sharepoint ManagedMetadataService" scheme="http://www.dmahanta.com/tags/Sharepoint2013-Sharepoint-ManagedMetadataService/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Securing Nancy using modules]]></title>
+    <link href="http://www.dmahanta.com/2013/04/27/securing-nancy-using-modules/"/>
+    <id>http://www.dmahanta.com/2013/04/27/securing-nancy-using-modules/</id>
+    <published>2013-04-27T18:41:00.000Z</published>
+    <updated>2013-12-06T05:16:30.000Z</updated>
+    <content type="html"><![CDATA[<p>For our SOA application we are using Nancy to host our service layer. So far, it was only an anonymous read so no reason to worry about security. But the next iteration has put for a requirement to impose security on who can update what.<br>I could have used someone of the existing modules of there, which enables me to put some authorization and authentication around a service. However, none of them suffice what we have in place. The plan is to use a product called Site Minder for authorization, and building a Nancy modules around it. Over the next few weeks as i start working on this, i will post updates and how i went about it and hopefully even fork and contribute this modules to the Nancy repo. So watch our for my posts.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>For our SOA application we are using Nancy to host our service layer. So far, it was only an anonymous read so no reason to worry about s]]>
+    </summary>
+    
+      <category term="C# Nancy Security .NET" scheme="http://www.dmahanta.com/tags/C-Nancy-Security-NET/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[WCF and Sharepoint 2010 Claims mode]]></title>
+    <link href="http://www.dmahanta.com/2013/04/23/wcf-and-sharepoint-2010-claims-mode/"/>
+    <id>http://www.dmahanta.com/2013/04/23/wcf-and-sharepoint-2010-claims-mode/</id>
+    <published>2013-04-24T04:05:00.000Z</published>
+    <updated>2013-12-06T17:01:30.000Z</updated>
+    <content type="html"><![CDATA[<p>For the past two days i have been working on moving an existing Sharepoint application from 2010 to 2013 in <a href="http://technet.microsoft.com/en-us/library/jj219599.aspx" target="_blank" rel="external">2010 mode</a>. What this means that it will run under the 14 hives in 2013 and wont use the new 15 hive. </p>
+<p>However our old application was using <a href="http://technet.microsoft.com/en-us/library/cc262350.aspx#planwin" target="_blank" rel="external">windows based authentication</a>, however in the new system it uses <a href="http://technet.microsoft.com/en-us/library/cc262350.aspx#cba" target="_blank" rel="external">claims based authentication</a>. I am familiar with how claims work, but as soon as we start to mix it up with WCF, it gets fairly complicated because internal i think windows tries to setup handshake using NTLM, which defines the general concept of claims, because i dont have to use OAuth or SAML to explicitly get a token and pass it. I think windows does it for me as long as i am passing the username and password. </p>
+<h1 id="Server_Side_Code">Server Side Code</h1><p>On the server side all i am doing is creating a WCF service and binding it to a basic http bidning and setting the transport to use credientail only. This is what it looks like<br>    [BasicHttpBindingServiceMetadataExchangeEndpoint]<br>    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]<br>    public class DocumentService : IDocumentService<br>    {<br>    ……<br>    }<br>Note the attributes for the class. Why it is important is because it enables us to expose the webservice without the need to define any end points. You can access the service via …filename.svc/MEX.</p>
+<p>Thats all that is to the server side. We package it and deploy it to the Webserver. Its a common mistake to go and append setting to the web.config.As long as we using this attribute we do not need to define anything.</p>
+<h1 id="Client_Side_Code">Client Side Code</h1><p>On the client side, all we need to is config it to pass the credientails. The way i have done this is as show below. Nothing fancy, just defining the endpoint and passing the username and password and allow impersonation<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">BasicHttpBinding binding =<span class="instruction"> new </span>BasicHttpBinding(<span class="function">)</span>;</span><br><span class="line">binding.Security.Mode = BasicHttpSecurityMode.TransportCredentialOnly;</span><br><span class="line">binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Ntlm;</span><br><span class="line"></span><br><span class="line">EndpointAddress endpoint =</span><br><span class="line">   <span class="instruction"> new </span>EndpointAddress(@<span class="string">"http://localhost:36150/_vti_bin/SharePointBits/Sample.svc"</span><span class="function">)</span>;</span><br><span class="line"></span><br><span class="line">// create our proxy client</span><br><span class="line">WCFService.SampleServiceClient proxy = </span><br><span class="line">   <span class="instruction"> new </span>WCFService.SampleServiceClient(binding, endpoint<span class="function">)</span>;</span><br><span class="line">proxy.ClientCredentials.Windows.ClientCredential =<span class="instruction"> new </span>System.Net.NetworkCredential(<span class="string">"administrator"</span>, <span class="string">"Pass@word!"</span>, <span class="string">"spod-10-3"</span><span class="function">)</span>;</span><br><span class="line">proxy.ClientCredentials.Windows.AllowedImpersonationLevel = </span><br><span class="line">    System.Security.Principal.TokenImpersonation<span class="class">Level.Impersonation;</span></span><br><span class="line"></span><br><span class="line">//<span class="instruction"> invoke </span>our service</span><br><span class="line">string webUrl =<span class="function"> proxy.GetCurrentWebUrl(</span><span class="function">)</span>;</span><br><span class="line"></span><br><span class="line">Console.WriteLine(webUrl<span class="function">)</span>;</span><br><span class="line">Console.Read(<span class="function">)</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Client_side_HTTP_traffic">Client side HTTP traffic</h2><p>I wanted to find out if the username and password is passed anywhere i fired up fiddler and checked what happens. I couldnt find anywhere refernce to username and password. So i looked up how NTLM works, and i think its trying to setup the trust using the AD account without passing the username and password. What it does pass is an NTLM token as shown in the SOAP request below<br>    POST <a href="http://spod-10-3:36150/_vti_bin/DocumentService.svc" target="_blank" rel="external">http://spod-10-3:36150/_vti_bin/DocumentService.svc</a> HTTP/1.1<br>    Content-Type: text/xml; charset=utf-8<br>    VsDebuggerCausalityData: uIDPo6oB9/O+EI5CqGe+xNjxE9QAAAAAnWBGldw3JU6dLCIhF5AQZKfaxLYBlLBDp/UBO3q1DKAACQAA<br>    SOAPAction: “<a href="http://tempuri.org/IDocumentService/HelloWorld" target="_blank" rel="external">http://tempuri.org/IDocumentService/HelloWorld</a>“<br>    Authorization: NTLM TlRMTVNTUAABAAAAt4II4gAAAAAAAAAAAAAAAAAAAAAGAbEdAAAADw==<br>    Host: spod-10-3:36150<br>    Content-Length: 0<br>Look at the <strong>Authorization</strong> param. Its an NTLM token. However i couldnt find any kind of SAML or OAuth request being done, so i guess AD is verifying the username and password</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>For the past two days i have been working on moving an existing Sharepoint application from 2010 to 2013 in <a href="http://technet.micro]]>
+    </summary>
+    
+      <category term="WCF Sharepoint2010 ClaimsBasedAuthentication Sharepoint2013 C# Sharepoint" scheme="http://www.dmahanta.com/tags/WCF-Sharepoint2010-ClaimsBasedAuthentication-Sharepoint2013-C-Sharepoint/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JSONP and CORS why doest it matter]]></title>
+    <link href="http://www.dmahanta.com/2013/04/22/jsonp-and-cors-why-doest-it-matterpwd/"/>
+    <id>http://www.dmahanta.com/2013/04/22/jsonp-and-cors-why-doest-it-matterpwd/</id>
+    <published>2013-04-23T03:06:00.000Z</published>
+    <updated>2013-12-06T05:16:30.000Z</updated>
+    <content type="html"><![CDATA[<p>So recently i have been working on quite a few application where most the code is client side and it renders the content via calling cross domain web service or rather <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="external">CORS</a>. This is a big no no when it comes to the world of the web. Its because it exposes vulnerability related to <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">Cross site scriptingg</a>.<br>So how do we go around it? Well as per what i read online and reviewed, you have two options</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="external">CORS</a></li>
+<li><a href="http://en.wikipedia.org/wiki/JSONP" target="_blank" rel="external">jsonp</a></li>
+</ul>
+<p>As far as what i have read, CORS is more modern concept, wheres jsonp enable you to run Cross Domain request in old borwser which doesnt support  CORS. Right now what i ended up doing in dev env is opening it up to everyone using the following<br>    Access-Control-Allow-Origin: *<br>However once i move to production i need to update this to say<br>    Access-Control-Allow-Origin: <a href="http://www.example.com" target="_blank" rel="external">http://www.example.com</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>So recently i have been working on quite a few application where most the code is client side and it renders the content via calling cros]]>
+    </summary>
+    
+      <category term="SOA" scheme="http://www.dmahanta.com/tags/SOA/"/>
+    
+      <category term="Security" scheme="http://www.dmahanta.com/tags/Security/"/>
+    
+      <category term="XHR" scheme="http://www.dmahanta.com/tags/XHR/"/>
+    
+      <category term="ajax" scheme="http://www.dmahanta.com/tags/ajax/"/>
+    
+      <category term="javascript" scheme="http://www.dmahanta.com/tags/javascript/"/>
+    
+  </entry>
+  
+</feed>

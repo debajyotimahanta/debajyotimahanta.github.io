@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jquery deferred vs async $.when | Debajyoti Mahanta</title>
+  <meta name="author" content="Debajyoti Mahanta">
+  
+  <meta name="description" content="Haven’t bloged for sometime. Had gone back to India for a few months and with the Internet speed back in Guwahati, it was hard getting work done leave">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="jquery deferred vs async $.when"/>
+  <meta property="og:site_name" content="Debajyoti Mahanta"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+
+  <link rel="alternate" href="/atom.xml" title="Debajyoti Mahanta" type="application/atom+xml">
+
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/print.css" media="print" type="text/css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+  <script src="/js/scripts.js"></script>
+
+  
+  
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config(
+    {
+      tex2jax: {inlineMath: [['$','$'], ['\(','\)']]},
+      TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}},
+    }
+  );
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+  
+</head>
+
+
+<body>
+    <div class="container">
+      <div class="left-col">
+        <div class="intrude-less">
+          <header id="header" class="inner">
+            <div class="profilepic">
+  <script src="/js/md5.js"></script>
+  <script type="text/javascript">
+    $(function(){
+	$('.profilepic').append(
+          "<img src='http://www.gravatar.com/avatar/"
+          + MD5("")
+          + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+    });
+  </script>
+</div><!-- profilepic -->
+<h1><a href="/">Debajyoti Mahanta</a></h1>
+<nav id="main-nav">
+  <ul class="main">
+    
+      <li>
+      <a href="/about">About</a>
+      </li>
+    
+  </ul>
+  
+</nav><!-- main-nav -->
+<nav id="sub-nav">
+  <div class="social">
+    
+      <a class="google" href="http://plus.google.com/debajyoti.mahanta"
+         title="Google+">Google+</a>
+    
+    
+      <a class="twitter" href="http://twitter.com/dmahanta"
+         title="Twitter">Twitter</a>
+    
+    
+      <a class="github" href="http://github.com/debajyotimahanta"
+         title="Github">Github</a>
+    
+    
+        <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+    
+  </div>
+</nav><!-- sub-nav -->
+<nav id="widget-nav">
+  <div class="widgets">
+    
+      
+<div class="widget tag">
+  <h3 class="title">標籤</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/C-Nancy-Security-NET/">C# Nancy Security .NET</a><small>1</small></li>
+  
+    <li><a href="/tags/CI/">CI</a><small>1</small></li>
+  
+    <li><a href="/tags/DIY/">DIY</a><small>1</small></li>
+  
+    <li><a href="/tags/IoT/">IoT</a><small>1</small></li>
+  
+    <li><a href="/tags/SOA/">SOA</a><small>1</small></li>
+  
+    <li><a href="/tags/Security/">Security</a><small>1</small></li>
+  
+    <li><a href="/tags/SharePoint-2013-Apps-Security-cross-site/">SharePoint 2013 Apps Security cross-site</a><small>1</small></li>
+  
+    <li><a href="/tags/Sharepoint2013-Sharepoint-ManagedMetadataService/">Sharepoint2013 Sharepoint ManagedMetadataService</a><small>1</small></li>
+  
+    <li><a href="/tags/WCF-Sharepoint2010-ClaimsBasedAuthentication-Sharepoint2013-C-Sharepoint/">WCF Sharepoint2010 ClaimsBasedAuthentication Sharepoint2013 C# Sharepoint</a><small>1</small></li>
+  
+    <li><a href="/tags/XHR/">XHR</a><small>1</small></li>
+  
+    <li><a href="/tags/ajax/">ajax</a><small>1</small></li>
+  
+    <li><a href="/tags/angularjs/">angularjs</a><small>1</small></li>
+  
+    <li><a href="/tags/api/">api</a><small>1</small></li>
+  
+    <li><a href="/tags/aws/">aws</a><small>2</small></li>
+  
+    <li><a href="/tags/azure/">azure</a><small>1</small></li>
+  
+    <li><a href="/tags/bower/">bower</a><small>1</small></li>
+  
+    <li><a href="/tags/clientside/">clientside</a><small>1</small></li>
+  
+    <li><a href="/tags/cloud/">cloud</a><small>1</small></li>
+  
+    <li><a href="/tags/coffescript/">coffescript</a><small>1</small></li>
+  
+    <li><a href="/tags/devops/">devops</a><small>1</small></li>
+  
+    <li><a href="/tags/grunt/">grunt</a><small>1</small></li>
+  
+    <li><a href="/tags/gulp/">gulp</a><small>1</small></li>
+  
+    <li><a href="/tags/hardware/">hardware</a><small>1</small></li>
+  
+    <li><a href="/tags/ionic/">ionic</a><small>1</small></li>
+  
+    <li><a href="/tags/iot/">iot</a><small>1</small></li>
+  
+    <li><a href="/tags/javascript/">javascript</a><small>5</small></li>
+  
+    <li><a href="/tags/jquery/">jquery</a><small>1</small></li>
+  
+    <li><a href="/tags/lync/">lync</a><small>1</small></li>
+  
+    <li><a href="/tags/microsfot/">microsfot</a><small>1</small></li>
+  
+    <li><a href="/tags/node/">node</a><small>2</small></li>
+  
+    <li><a href="/tags/node-js/">node.js</a><small>1</small></li>
+  
+    <li><a href="/tags/opensource/">opensource</a><small>1</small></li>
+  
+    <li><a href="/tags/raspberry-pi/">raspberry pi</a><small>1</small></li>
+  
+    <li><a href="/tags/sharepoint-html/">sharepoint.html</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+    
+  </div>
+</nav><!-- widget-nav -->
+
+          <header>
+        </div><!-- intrude-less -->
+      </div><!-- left-col -->
+      <div class="mid-col">
+        <div class="mid-col-container">
+	    <div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+	<div class="meta">
+          
+<div class="date">
+
+<time datetime="2014-05-10T04:01:09.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2014-05-09
+</time>
+
+
+
+
+
+</div>
+
+          
+          
+<div class="print">打印</div>
+
+          
+	</div>
+        <h1 class="title" itemprop="name">jquery deferred vs async $.when</h1>
+      	<div class="entry-content" itemprop="articleBody"><p>Haven’t bloged for sometime. Had gone back to India for a few months and with the Internet speed back in Guwahati, it was hard getting work done leave aside, bloging. But anyways i had a good time, however since the title of this post is not my vacation time, but rather jquery deferred i will stop.<br>Recently as part of sharepoint app development i have been doing a lot of javascript. While doing that i came across a scenario where i had to make multiple ajax call, and wait for the response to render the view. Something like this<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">http.get(<span class="string">'api/employmenttype'</span>, <span class="literal">null</span>, <span class="literal">false</span>)</span><br><span class="line">            .done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'loaded: employmenttype'</span>);</span><br><span class="line">                vm.lookups.allEmploymentTypes(response);</span><br><span class="line">    &#125;);    </span><br><span class="line">http.get(<span class="string">'api/actionlist'</span>, <span class="literal">null</span>, <span class="literal">false</span>)</span><br><span class="line">    .done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'loaded: actionlist'</span>);</span><br><span class="line">        vm.lookups.allActionListOptions(response);</span><br><span class="line">    &#125;);  </span><br><span class="line"></span><br><span class="line">    view.render()</span><br></pre></td></tr></table></figure></p>
+<p>As you can see above i am using <code>false</code> so that the method is asych. The drawback to this is that its blocking code and does the executing in sequence. Ideally i should be able to call them in parallel and when complete combine them.</p>
+<p>Thats exactly what my next set of code will do </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.when(</span><br><span class="line">        http.get(<span class="string">'api/employmenttype'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: employmenttype'</span>);</span><br><span class="line">            vm.lookups.allEmploymentTypes(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        http.get(<span class="string">'api/actionlist'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: actionlist'</span>);</span><br><span class="line">            vm.lookups.allActionListOptions(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        http.get(<span class="string">'api/company'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: company'</span>);</span><br><span class="line">            vm.lookups.allCompanies(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="comment">// … some more</span></span><br><span class="line">        ).done(view.render());</span><br></pre></td></tr></table></figure>
+<p>This is how we should be doing it. Its much better way to do asych programing. So basically what <code>when</code> does is it waits for each ajax call to complete or in javascript world promise to complete before it executes the done function. Also the ajax calls can now we asyc, i didnt pass a `false; to the get method.<br>In addition I think there is something call defer, but i havent gone in details on what that does as of today. But there is a nice article listed <a href="http://www.bitstorm.org/weblog/2012-1/Deferred_and_promise_in_jQuery.html" target="_blank" rel="external">here</a> you might wanna take a look.</p>
+</div>
+
+
+</article>
+
+  <div class="share">
+  <div class="addthis_toolbox addthis_default_style ">
+  
+  
+  <a class="addthis_button_tweet"></a>
+  
+  
+  <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+  
+  
+  </div>
+  <script type="text/javascript">
+    var addthis_config = {"data_track_addressbar":true};
+  </script>
+  <script type="text/javascript"
+          src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=null">
+  </script>
+</div>
+
+
+
+
+</div>
+	</div>
+        <footer id="footer" class="inner">
+          Copyright © 2013 - Debajyoti Mahanta - Powered by <a href="https://github.com/tommy351/hexo">Hexo</a><br>
+- Ported theme <a href="https://github.com/nuklly/hexo-theme-greyshade">GreyShade</a> -
+        </footer>
+        
+<script src="/js/slash.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+
+      </div><!-- mid-col -->
+    </div><!-- container -->
+</body>
+</html>

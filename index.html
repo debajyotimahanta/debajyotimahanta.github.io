@@ -10,12 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Warm Neutrals -->
-    <!-- Application Structure Plan: The SPA is now designed as a single-page, scrollable resume. It starts with a Hero section for immediate impact. All experience details are displayed sequentially, allowing users to consume the full career narrative without clicks. A static visual timeline provides a quick overview of career progression. This is followed by a skills overview and a chart visualizing time spent at each company, providing a quick quantitative summary. This structure prioritizes immediate access to all information, making it a comprehensive, traditional resume format in an interactive web application. -->
+    <!-- Application Structure Plan: The SPA is designed as an interactive narrative of the user's career. It starts with a Hero section for immediate impact. The core is an interactive horizontal timeline, allowing users to explore career stages non-linearly. Clicking a company on the timeline reveals detailed role descriptions below, making the information digestible. This is followed by a skills overview and a chart visualizing time spent at each company, providing a quick quantitative summary. A dedicated "Key Projects" section highlights major accomplishments. This structure turns a passive resume into an active exploration, guiding the user through a compelling professional story. -->
     <!-- Visualization & Content Choices: 
-        - Career Timeline (Organize): A static HTML/CSS timeline serves as a visual guide to career progression, enhancing readability without requiring interaction.
-        - Experience Details (Inform): All company and role details are displayed by default, allowing for a continuous read-through of the career history.
-        - Experience Duration (Compare): A Chart.js horizontal bar chart visualizes the length of tenure at each major company, providing an immediate, comparative understanding of the career path. Library: Chart.js.
+        - Career Timeline (Organize/Change): An interactive HTML/CSS timeline serves as the primary navigation, allowing users to select a company and dynamically view associated roles. This is more engaging than scrolling a long list.
+        - Experience Duration (Compare): A Chart.js horizontal bar chart visualizes the length of tenure at each major company. This provides an immediate, comparative understanding of the career path. Library: Chart.js.
         - Skills (Organize): A categorized grid layout presents technical skills, making it easy to scan for expertise in specific areas like Cloud, AI, and Backend.
+        - Key Projects (Inform): A card-based layout highlights the most significant projects (Vector DB, ELB, etc.), drawing attention to high-impact work.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
@@ -25,10 +25,25 @@
             color: #343F4F;
         }
         .timeline-item {
-            cursor: default; /* No longer interactive */
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .timeline-item.active {
+            color: #4A7C59;
+            transform: translateY(-2px);
+        }
+        .timeline-item.active .timeline-dot {
+            background-color: #4A7C59;
+            transform: scale(1.5);
         }
         .timeline-dot {
             transition: all 0.3s ease;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
         }
         .chart-container {
             position: relative;
@@ -60,13 +75,13 @@
             </div>
         </header>
 
-        <!-- Static Timeline Section (Visual Only) -->
+        <!-- Interactive Timeline Section -->
         <section id="timeline-section" class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-10">Career Journey Overview</h2>
+            <h2 class="text-3xl font-bold text-center mb-10">Career Journey</h2>
             <div class="relative">
                 <div class="border-t-2 border-gray-300 absolute top-1/2 w-full"></div>
                 <div id="timeline-nav" class="relative flex justify-between">
-                    <div class="timeline-item" data-target="google">
+                    <div class="timeline-item active" data-target="google">
                         <div class="text-center">
                             <div class="timeline-dot w-4 h-4 bg-[#4A7C59] rounded-full mx-auto mb-2"></div>
                             <span class="font-semibold text-[#4A7C59]">Google</span>
@@ -100,11 +115,9 @@
             </div>
         </section>
 
-        <!-- Experience Details Section (All Visible) -->
-        <main id="experience-details" class="bg-white/50 rounded-lg p-6 md:p-10 shadow-sm space-y-12">
-            <h2 class="text-3xl font-bold text-center mb-10">Detailed Experience</h2>
-
-            <div id="google" class="content-section border-b border-gray-200 pb-8 last:border-b-0">
+        <!-- Experience Details Section -->
+        <main id="experience-details" class="bg-white/50 rounded-lg p-6 md:p-10 shadow-sm min-h-[300px]">
+            <div id="google" class="content-section active">
                 <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">Google</h3>
                 <p class="text-gray-600 mb-6">Senior Software Engineer | Aug 2019 - Present</p>
                 <div class="space-y-4 text-gray-800">
@@ -113,7 +126,7 @@
                     <p><strong>Initial Role (BigQuery):</strong> Contributed to the BigQuery data warehouse platform, focusing on front-end integration with the query engine and optimizing stack performance for speed and efficiency.</p>
                 </div>
             </div>
-            <div id="aws" class="content-section border-b border-gray-200 pb-8 last:border-b-0">
+            <div id="aws" class="content-section">
                 <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">Amazon Web Services (AWS)</h3>
                 <p class="text-gray-600 mb-6">Senior SDE / SDE | May 2016 - Aug 2019</p>
                 <div class="space-y-4 text-gray-800">
@@ -121,7 +134,7 @@
                     <p>Architected scalable, robust systems for mission-critical workloads on millions of EC2 instances across 25+ AWS regions. Key projects included implementing TLS for NLB, building a next-generation plugin-based workflow engine, creating multi-tenant systems, and automating region builds.</p>
                 </div>
             </div>
-            <div id="aon" class="content-section border-b border-gray-200 pb-8 last:border-b-0">
+            <div id="aon" class="content-section">
                 <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">Aon</h3>
                 <p class="text-gray-600 mb-6">Senior Application Team Lead | Oct 2012 - May 2016</p>
                 <div class="space-y-4 text-gray-800">
@@ -129,7 +142,7 @@
                     <p>Spearheaded the migration of legacy backend systems to a modern micro-architecture. Designed and developed a Tool Recommendation Engine using Collaborative Filtering techniques.</p>
                 </div>
             </div>
-            <div id="accenture" class="content-section border-b border-gray-200 pb-8 last:border-b-0">
+            <div id="accenture" class="content-section">
                 <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">Accenture Technology Solutions</h3>
                 <p class="text-gray-600 mb-6">Team Lead | Apr 2010 - Oct 2012</p>
                 <div class="space-y-4 text-gray-800">
@@ -158,7 +171,7 @@
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2 text-[#4A7C59]">AI & Machine Learning</h4>
-                        <p class="text-700">Generative AI, LLM, Vector Databases, Machine Learning, Agent Development, CUDA</p>
+                        <p class="text-gray-700">Generative AI, LLM, Vector Databases, Machine Learning, Agent Development, CUDA</p>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2 text-[#4A7C59]">Backend & Full-Stack</h4>
@@ -183,8 +196,35 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // The timeline is now purely visual, no interactive JS needed for it.
-            // All content sections are displayed by default via HTML structure.
+            const timelineNav = document.getElementById('timeline-nav');
+            const experienceDetails = document.getElementById('experience-details');
+            const timelineItems = timelineNav.querySelectorAll('.timeline-item');
+            const contentSections = experienceDetails.querySelectorAll('.content-section');
+
+            timelineNav.addEventListener('click', (e) => {
+                const targetItem = e.target.closest('.timeline-item');
+                if (!targetItem) return;
+
+                const targetId = targetItem.dataset.target;
+
+                timelineItems.forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.timeline-dot').classList.remove('bg-[#4A7C59]');
+                    item.querySelector('.timeline-dot').classList.add('bg-gray-400');
+                    item.querySelector('span').classList.remove('text-[#4A7C59]');
+                });
+                targetItem.classList.add('active');
+                targetItem.querySelector('.timeline-dot').classList.remove('bg-gray-400');
+                targetItem.querySelector('.timeline-dot').classList.add('bg-[#4A7C59]');
+                targetItem.querySelector('span').classList.add('text-[#4A7C59]');
+
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === targetId) {
+                        section.classList.add('active');
+                    }
+                });
+            });
 
             const ctx = document.getElementById('experienceChart').getContext('2d');
             const experienceData = {

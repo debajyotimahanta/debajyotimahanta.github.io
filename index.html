@@ -1,702 +1,252 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <title>Debajyoti Mahanta</title>
-  <meta name="author" content="Debajyoti Mahanta">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  
-  <meta property="og:site_name" content="Debajyoti Mahanta"/>
-
-  
-    <meta property="og:image" content="undefined"/>
-  
-
-  <link href="/favicon.png" rel="icon">
-
-  <link rel="alternate" href="/atom.xml" title="Debajyoti Mahanta" type="application/atom+xml">
-
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/print.css" media="print" type="text/css">
-
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-
-  <script src="/js/scripts.js"></script>
-
-  
-  
-    <script type="text/x-mathjax-config">
-  MathJax.Hub.Config(
-    {
-      tex2jax: {inlineMath: [['$','$'], ['\(','\)']]},
-      TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}},
-    }
-  );
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debajyoti Mahanta | Senior Cloud Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: The SPA is now designed as a single-page, scrollable resume. It starts with a Hero section for immediate impact. All experience details are displayed sequentially, allowing users to consume the full career narrative without clicks. A static visual timeline provides a quick overview of career progression. This is followed by a skills overview and a chart visualizing time spent at each company, providing a quick quantitative summary. This structure prioritizes immediate access to all information, making it a comprehensive, traditional resume format in an interactive web application. -->
+    <!-- Visualization & Content Choices: 
+        - Career Timeline (Organize): A static HTML/CSS timeline serves as a visual guide to career progression, enhancing readability without requiring interaction.
+        - Experience Details (Inform): All company and role details are displayed by default, allowing for a continuous read-through of the career history.
+        - Experience Duration (Compare): A Chart.js horizontal bar chart visualizes the length of tenure at each major company, providing an immediate, comparative understanding of the career path. Library: Chart.js.
+        - Skills (Organize): A categorized grid layout presents technical skills, making it easy to scan for expertise in specific areas like Cloud, AI, and Backend.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #343F4F;
+        }
+        .timeline-item {
+            cursor: default; /* No longer interactive */
+        }
+        .timeline-dot {
+            transition: all 0.3s ease;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 40vh;
+            width: 100%;
+            max-width: 900px;
+            max-height: 450px;
+        }
+    </style>
 </head>
-
-
-<body>
-    <div class="container">
-      <div class="left-col">
-        <div class="intrude-less">
-          <header id="header" class="inner">
-            <div class="profilepic">
-  <script src="/js/md5.js"></script>
-  <script type="text/javascript">
-    $(function(){
-	$('.profilepic').append(
-          "<img src='http://www.gravatar.com/avatar/"
-          + MD5("")
-          + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-    });
-  </script>
-</div><!-- profilepic -->
-<h1><a href="/">Debajyoti Mahanta</a></h1>
-<nav id="main-nav">
-  <ul class="main">
-    
-      <li>
-      <a href="/about">About</a>
-      </li>
-    
-  </ul>
-  
-</nav><!-- main-nav -->
-<nav id="sub-nav">
-  <div class="social">
-    
-      <a class="google" href="http://plus.google.com/debajyoti.mahanta"
-         title="Google+">Google+</a>
-    
-    
-      <a class="twitter" href="http://twitter.com/dmahanta"
-         title="Twitter">Twitter</a>
-    
-    
-      <a class="github" href="http://github.com/debajyotimahanta"
-         title="Github">Github</a>
-    
-    
-        <a class="rss" href="/atom.xml" title="RSS">RSS</a>
-    
-  </div>
-</nav><!-- sub-nav -->
-<nav id="widget-nav">
-  <div class="widgets">
-    
-      
-<div class="widget tag">
-  <h3 class="title">標籤</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/C-Nancy-Security-NET/">C# Nancy Security .NET</a><small>1</small></li>
-  
-    <li><a href="/tags/CI/">CI</a><small>1</small></li>
-  
-    <li><a href="/tags/DIY/">DIY</a><small>1</small></li>
-  
-    <li><a href="/tags/IoT/">IoT</a><small>1</small></li>
-  
-    <li><a href="/tags/SOA/">SOA</a><small>1</small></li>
-  
-    <li><a href="/tags/Security/">Security</a><small>1</small></li>
-  
-    <li><a href="/tags/SharePoint-2013-Apps-Security-cross-site/">SharePoint 2013 Apps Security cross-site</a><small>1</small></li>
-  
-    <li><a href="/tags/Sharepoint2013-Sharepoint-ManagedMetadataService/">Sharepoint2013 Sharepoint ManagedMetadataService</a><small>1</small></li>
-  
-    <li><a href="/tags/WCF-Sharepoint2010-ClaimsBasedAuthentication-Sharepoint2013-C-Sharepoint/">WCF Sharepoint2010 ClaimsBasedAuthentication Sharepoint2013 C# Sharepoint</a><small>1</small></li>
-  
-    <li><a href="/tags/XHR/">XHR</a><small>1</small></li>
-  
-    <li><a href="/tags/ajax/">ajax</a><small>1</small></li>
-  
-    <li><a href="/tags/angularjs/">angularjs</a><small>1</small></li>
-  
-    <li><a href="/tags/api/">api</a><small>1</small></li>
-  
-    <li><a href="/tags/aws/">aws</a><small>2</small></li>
-  
-    <li><a href="/tags/azure/">azure</a><small>1</small></li>
-  
-    <li><a href="/tags/bower/">bower</a><small>1</small></li>
-  
-    <li><a href="/tags/clientside/">clientside</a><small>1</small></li>
-  
-    <li><a href="/tags/cloud/">cloud</a><small>1</small></li>
-  
-    <li><a href="/tags/coffescript/">coffescript</a><small>1</small></li>
-  
-    <li><a href="/tags/devops/">devops</a><small>1</small></li>
-  
-    <li><a href="/tags/grunt/">grunt</a><small>1</small></li>
-  
-    <li><a href="/tags/gulp/">gulp</a><small>1</small></li>
-  
-    <li><a href="/tags/hardware/">hardware</a><small>1</small></li>
-  
-    <li><a href="/tags/ionic/">ionic</a><small>1</small></li>
-  
-    <li><a href="/tags/iot/">iot</a><small>1</small></li>
-  
-    <li><a href="/tags/javascript/">javascript</a><small>5</small></li>
-  
-    <li><a href="/tags/jquery/">jquery</a><small>1</small></li>
-  
-    <li><a href="/tags/lync/">lync</a><small>1</small></li>
-  
-    <li><a href="/tags/microsfot/">microsfot</a><small>1</small></li>
-  
-    <li><a href="/tags/node/">node</a><small>2</small></li>
-  
-    <li><a href="/tags/node-js/">node.js</a><small>1</small></li>
-  
-    <li><a href="/tags/opensource/">opensource</a><small>1</small></li>
-  
-    <li><a href="/tags/raspberry-pi/">raspberry pi</a><small>1</small></li>
-  
-    <li><a href="/tags/sharepoint-html/">sharepoint.html</a><small>1</small></li>
-  
-  </ul>
-</div>
-
-
-    
-  </div>
-</nav><!-- widget-nav -->
-
-          <header>
-        </div><!-- intrude-less -->
-      </div><!-- left-col -->
-      <div class="mid-col">
-        <div class="mid-col-container">
-	    <div id="content" class="inner"><div itemscope itemtype="http://schema.org/Blog">
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2015-10-18T03:45:35.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2015-10-17
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/api/">api</a>, <a href="/tags/aws/">aws</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2015/10/17/Invalid-permissions-on-Lambda-function-when-using-API-Gateway/" itemprop="url">
-            Invalid permissions on Lambda function when using API Gateway</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>Lately i was working with micro service and leveraging AWS to crete a serverless infrastucture. To achieve this i was using <a href="https://aws.amazon.com/lambda/" target="_blank" rel="external">aws lambda</a> as the service host with <a href="https://aws.amazon.com/api-gateway/" target="_blank" rel="external">aws api gateway</a> as the entry point. However i ran into a strage problem. I had to update my IAM policy for a lambda function, after doing that when i went back and tested the lambda function it worked fine. I was able to access the dynamodb and it worked. However when i tried to access it via API it failed. I got the following error<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Execution failed due to configuration error: Invalid permissions on Lambda <span class="function"><span class="keyword">function</span></span></span><br></pre></td></tr></table></figure></p>
-<p>The error looks wiered because the Lambda did have access.  I played around with access, but couldnt find anything. Eventually i came across this <a href="https://www.youtube.com/watch?v=H4LM_jw5zzs" target="_blank" rel="external">video</a>. Apprently all i had to is goto to Integration Requst and edit the lamda function and just resave it. When we save it back, it prompts saying lambda will be given permission and that solved the issue.</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2015-10-08T05:56:33.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2015-10-08
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/angularjs/">angularjs</a>, <a href="/tags/hardware/">hardware</a>, <a href="/tags/ionic/">ionic</a>, <a href="/tags/iot/">iot</a>, <a href="/tags/javascript/">javascript</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2015/10/08/meetup-on-angularjs-home-automation/" itemprop="url">
-            Meetup on AngularJS Home Automation</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>Bloggin after a long time. Its been a while. Busy helping out a friends startup, and doing some mobile developement. Mobile is getting big even in my work life, where we have decided to go ahead with Xamarin. But MDM is still up in the air, so the Mac on my work is gathering dust right now, as no Xamarin iOS developement is going on. Anwyays, for this starup i have been using <a href="http://ionicframework.com/" target="_blank" rel="external">Ionic</a> which is angularjs + cordova. Its a good mix. As long as you try to stick with basic developement it works great. But if you try to get native feature it works, but i have few complaines about anrdoid version compatibility. So have been playing around with that a lot. When a got a email from <a href="https://twitter.com/mdkhan005" target="_blank" rel="external">M.D.Khan</a>, about giving a talk about a topic i posted long time back about Home Automation using angularjs. I actually created a basic POC for angular conference, but it didnt get selected. Here is the link to the <a href="http://www.meetup.com/Ionic-CHI/events/225727929/" target="_blank" rel="external">Meetup</a>. Its already house full, which makes me nervous and puts more pressure.<br>In the near future i will be creating a few more tutorials around what i build and how its done. So stay tuned.</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2014-07-03T05:45:07.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2014-07-03
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/bower/">bower</a>, <a href="/tags/coffescript/">coffescript</a>, <a href="/tags/javascript/">javascript</a>, <a href="/tags/lync/">lync</a>, <a href="/tags/microsfot/">microsfot</a>, <a href="/tags/opensource/">opensource</a>, <a href="/tags/sharepoint-html/">sharepoint.html</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2014/07/03/firstopensourceproject/" itemprop="url">
-            FirstOpenSourceProject</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>First cut of Lycn presence awareness javascript library. I just release the working code. There are still few pending items, like getting the test coverage to be 100% making gulp work to do a CI etc, but  i need to get this working copy out as it was dependent on another project i was working on. You can find more details about this project in the <a href="https://github.com/debajyotimahanta/LyncPressence" target="_blank" rel="external">github repo</a>. I am use coffee script for both creating the app as well as for testing. I havent uploaded the test cases, but you can take look at it if you see the commit log. The reason the latest commit doesnt have it is because i had to use the window object and Mocha doesnt support window. I had to integrate it with PhantomJS or something like that, for which i had to create a index.html too, so more work, which i know will have to do. But i wanted to get this out there first. In addition to this i also wanted to see how much traction it gets. If see good response i am willing to work more on it.<br>So looking forward for your feedback and suggestions.</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2014-06-12T04:37:58.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2014-06-11
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/CI/">CI</a>, <a href="/tags/devops/">devops</a>, <a href="/tags/grunt/">grunt</a>, <a href="/tags/gulp/">gulp</a>, <a href="/tags/node-js/">node.js</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2014/06/11/gulp_vs_grunt/" itemprop="url">
-            gulp_vs_grunt</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>So <a href="https://twitter.com/hashtag/windycityhack?src=hash" target="_blank" rel="external">#WinndyCityHack</a> was over a week back. Couldnt gt anything done so didnt do a demo. Hopefully in the next hack we can showcase something. I didnt build any IoT stuff which i was planning because i had made the proejct to complicated for the time frame. Let see how it works out in the next hackathon.</p>
-<p>So in the meantime work required me to build a few javscript apps, and i have been using backbone and TDD via mocha and chai. Its all working out great so far. I am also using grunt as a build tool, and its really nice, then while using grunt i came across, gulp and that was really hooked into it. It uses node.js streams to piple tasks together and hence makes the process super fsat, not that grunt was slow, but its more cleaner and easier to understand.</p>
-<p>So far my experiance with gulp is nothing but great. I highly recommed it to anyone who wants to use a build tool for client side or javascript projects. But i does lack maturity and access to plugins that grunt comes with. But its growing and i am pretty sure it will overtake or atleast be at par with grunt pretty soon. </p>
-<p>I will post my finding in my next blog post, about gulp and what itresting thing i learnt from it.</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2014-05-17T02:37:11.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2014-05-16
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/DIY/">DIY</a>, <a href="/tags/IoT/">IoT</a>, <a href="/tags/raspberry-pi/">raspberry pi</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2014/05/16/getting-started-with-raspberry-pi/" itemprop="url">
-            Getting started with Raspberry Pi</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>Got my Raspberry Pi today, so i decided since i have some time might as well try to load the OS on it. I  followed this <a href="http://www.raspberrypi.org/help/noobs-setup/" target="_blank" rel="external">link</a> to load the OS on the board. Worked like a charm. I choose Raspbian as the image, because i think thats whats recommended and most of the blogs use that. Plan to play around with it and then decide if i need to switch it to something else. It took around 5-10 min for the whole setup to complete, but i didnt have to do anything to it. It was fairly straight forward, considering what i had to do to install Linux in my college days(create partion which has to in primary sector etc etc)<br>I also got a <a href="https://www.sparkfun.com/products/11713" target="_blank" rel="external">wifi module</a> and got that to work with the board, by following the instructions listed in the <a href="https://learn.sparkfun.com/tutorials/using-pcduinos-wifi-dongle-with-the-pi" target="_blank" rel="external">site</a>. So all set for <a href="http://en.wikipedia.org/wiki/Internet_of_Things" target="_blank" rel="external">IoT</a> what do i do with it next, any ideas?</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2014-05-10T04:01:09.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2014-05-09
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/clientside/">clientside</a>, <a href="/tags/javascript/">javascript</a>, <a href="/tags/jquery/">jquery</a>, <a href="/tags/node/">node</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2014/05/09/jquery-defered-vs-asynch/" itemprop="url">
-            jquery deferred vs async $.when</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>Haven’t bloged for sometime. Had gone back to India for a few months and with the Internet speed back in Guwahati, it was hard getting work done leave aside, bloging. But anyways i had a good time, however since the title of this post is not my vacation time, but rather jquery deferred i will stop.<br>Recently as part of sharepoint app development i have been doing a lot of javascript. While doing that i came across a scenario where i had to make multiple ajax call, and wait for the response to render the view. Something like this<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">http.get(<span class="string">'api/employmenttype'</span>, <span class="literal">null</span>, <span class="literal">false</span>)</span><br><span class="line">            .done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'loaded: employmenttype'</span>);</span><br><span class="line">                vm.lookups.allEmploymentTypes(response);</span><br><span class="line">    &#125;);    </span><br><span class="line">http.get(<span class="string">'api/actionlist'</span>, <span class="literal">null</span>, <span class="literal">false</span>)</span><br><span class="line">    .done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'loaded: actionlist'</span>);</span><br><span class="line">        vm.lookups.allActionListOptions(response);</span><br><span class="line">    &#125;);  </span><br><span class="line"></span><br><span class="line">    view.render()</span><br></pre></td></tr></table></figure></p>
-<p>As you can see above i am using <code>false</code> so that the method is asych. The drawback to this is that its blocking code and does the executing in sequence. Ideally i should be able to call them in parallel and when complete combine them.</p>
-<p>Thats exactly what my next set of code will do </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.when(</span><br><span class="line">        http.get(<span class="string">'api/employmenttype'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: employmenttype'</span>);</span><br><span class="line">            vm.lookups.allEmploymentTypes(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        http.get(<span class="string">'api/actionlist'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: actionlist'</span>);</span><br><span class="line">            vm.lookups.allActionListOptions(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        http.get(<span class="string">'api/company'</span>).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'loaded: company'</span>);</span><br><span class="line">            vm.lookups.allCompanies(response);</span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="comment">// … some more</span></span><br><span class="line">        ).done(view.render());</span><br></pre></td></tr></table></figure>
-<p>This is how we should be doing it. Its much better way to do asych programing. So basically what <code>when</code> does is it waits for each ajax call to complete or in javascript world promise to complete before it executes the done function. Also the ajax calls can now we asyc, i didnt pass a `false; to the get method.<br>In addition I think there is something call defer, but i havent gone in details on what that does as of today. But there is a nice article listed <a href="http://www.bitstorm.org/weblog/2012-1/Deferred_and_promise_in_jQuery.html" target="_blank" rel="external">here</a> you might wanna take a look.</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2013-11-15T06:09:00.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2013-11-15
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/SharePoint-2013-Apps-Security-cross-site/">SharePoint 2013 Apps Security cross-site</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2013/11/15/apps-for-sharepoint/" itemprop="url">
-            Apps for SharePoint</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>Have been busy with work, but i still havent given up on migrating this blog over to node. In the mean time, i have been working a lot SharePoint, weather i like it or not. I thought i like the new app model for sharepoint, but the more deep i get, the more i lose hope on it. Its good thought, however i think its still has a long way to go before it can be matured enought. The reason i say that is because if i follow a provider hosted app vs auto hosted or sharepoint hosted <a href="http://msdn.microsoft.com/en-us/library/office/fp179930.aspx" target="_blank" rel="external">link</a>, i am dommed. The boiler plate code provided by microsoft is only assuming you are hosted in IIS and using the same AD provider. If you have a differenet federation provider i couldnt find any code for it and plus it gets fairly complicated. So i had to roll back and use CSOM model and use elevate privalges to run my code. It suffices my need as all i wanted was to read data. However in future if i need to take into account user context, this approach would not work.<br>Ok lets move back to apps. So i was looking and using cross site domain library to levrage javascript to query other sharepoint list <a href="http://blogs.technet.com/b/tothesharepoint/archive/2013/02/19/an-introduction-to-cross-site-publishing.aspx" target="_blank" rel="external">link</a>. So far it looks promising, and seems a better approach. However i dont like the way it create a domain on the fly to reigster these apps. I guess thats how Micorosft thought would be better and i think for security reasons.<br>Anyways so far i was able to<br>1.Create a wild card domain<br>2.Get on the fly domain working use the above wild card domain<br>3.Enable proper trust in appmanifest.xml<br>4.Now pending is calling this app from a completly outside application using javascript.<br>Look out for my next post on this</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2013-10-20T03:36:00.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2013-10-19
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/aws/">aws</a>, <a href="/tags/azure/">azure</a>, <a href="/tags/cloud/">cloud</a>, <a href="/tags/javascript/">javascript</a>, <a href="/tags/node/">node</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2013/10/19/moving-my-blog-to-node-and-azure/" itemprop="url">
-            Moving to node.js and Azure or AWS</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>So its been a while since my last post. I have busy as my 1 year old has started walking and i spend most of the time after work running after him. In addition to this, work has been hectic, not that i am complaining, actually getting to learn a lot of things thanks to <a href="https://twitter.com/luisbocaletti" target="_blank" rel="external">@luisbocaletti</a>. I also went to some great conference, and got to meet and see a few open source projects happing in the .net and Microsoft world, and how Microsoft is promoting a lot for node.js. I really like node.js and how its light weight and you can easily, bring up a text editor and start coding. That was also the reason i started learning Ruby and hence blogged using octopress. However i havent had much luck actually using Ruby is real world. Probably because of work. However i do use javascript a lot, and familar with the code. Hence i am thinking of moving this blog to a node.js platform and probably host it in Azure or AWS. Still contemplating the decision. Hope fully next time i blog, it will be not using Octopress but something else.</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2013-06-21T03:19:00.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2013-06-20
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/Sharepoint2013-Sharepoint-ManagedMetadataService/">Sharepoint2013 Sharepoint ManagedMetadataService</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2013/06/20/sharepoint-2010-application-load-balancing-and-farm-trust/" itemprop="url">
-            Sharepoint 2010 Application Load Balancing and farm trust</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>I have been recently working on a sharepoint2010 to 2013 migration project, and even though this might not be related to migration we stumbled upon an issue, which took forver to be resolved. Before i dive into the issue, let me explain the background and give you a run down of what was happening.</p>
-<p>###Background<br>As a part of the migration, we where moving existing application from a fairly open data center to a location where everything is locked down. So when we did the move, we found that another farm, which was consuming the Managed Metadata service, wasn’t able to do this. This was expected, and we knew we had to open up firewalls, but what firewalls. Internally sharepoint user topology service to expose all its end points published as a service. So what we ended up doing is opening the firewall between two servers, which enable traffic over 32844 and 32843.(Prior to this we also had to setup trust and all the stuff require to publish managed metadata across farm. More can be found this this <a href="http://blogs.msdn.com/b/spses/archive/2011/11/28/managed-metadata-taxonomy-amp-more.aspx" target="_blank" rel="external">article</a>).</p>
-<p>###Error<br>So ideally this should work, and in a way it did. When we try to connect to our farm form the external farm, we where able to see all the service and even add them. However thats all we could do. We couldn’t consume the services. After reviewing the log we found this error<br>    Microsoft.SharePoint.SPException: Addresses for this application have not yet been fetched. </p>
-<p>###Solution<br>After chaning our logs to be verbose, we found that sharepoint was trying not only connect to the application server where the service was hosted but also to the other servers in the fram. Why, even though the service was turned off? Till date i couldn’t figure out. However i learned that sharepoint internal does some kind of load balancing on its own for the topology service and since we hadn’t open up the entire farm to each other, we where getting the error as it couldn’t fetch the other site via the url.(More details about load balancing can be found <a href="http://blogs.msdn.com/b/besidethepoint/archive/2011/02/19/how-i-learned-to-stop-worrying-and-love-the-sharepoint-topology-service.aspx" target="_blank" rel="external">here</a>)</p>
-<p>###Conslusion<br>So after opening up ports between all the servers in the farm we where able to consume the Managed Metadata Service as well as view it from the other farm. So opening just the ports to the app server isn’t sufficient because of Sharepoint’s internal load balancing feature, which i know is being done with the right thoughts in mind. We want to make the service highly available. However we missed this one small thing, and it caused us a lot of pain and time. Also as a side note, we even tried to spoof this, but creating an entry in the DNS so that all url/server point to one IP, which is of the server to which the port is open. However this didnt help because the SSL certificate for some reason goofed up and we get error related to SSL/TSL trust issue as WCF level. So we can conclude that there is no option but to open up the firewalls for the entire farm. If there are other ways to get around this, i will surely like to know and fell free to drop me a line and we can hook up.</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-	<div class="meta">
-          
-<div class="date">
-
-<time datetime="2013-04-27T18:41:00.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2013-04-27
-</time>
-
-
-
-
-
-</div>
-
-          
-
- 
- <div class="tags">
-   <a href="/tags/C-Nancy-Security-NET/">C# Nancy Security .NET</a>
- </div>
-
-
-          
-	</div>
-        <h1 class="title" itemprop="name">
-          <a href="/2013/04/27/securing-nancy-using-modules/" itemprop="url">
-            Securing Nancy using modules</a>
-        </h1>
-        <div class="entry-content" itemprop="articleBody">
-          
-            <p>For our SOA application we are using Nancy to host our service layer. So far, it was only an anonymous read so no reason to worry about security. But the next iteration has put for a requirement to impose security on who can update what.<br>I could have used someone of the existing modules of there, which enables me to put some authorization and authentication around a service. However, none of them suffice what we have in place. The plan is to use a product called Site Minder for authorization, and building a Nancy modules around it. Over the next few weeks as i start working on this, i will post updates and how i went about it and hopefully even fork and contribute this modules to the Nancy repo. So watch our for my posts.</p>
-
-          
-        </div>
-
-
-</article>
-
-
-
-
-</div>
-
-<nav id="pagenavi">
-    
-    
-        <a href="/page/2/" class="next">
-          下一頁
-        </a>
-    
-    <div class="center">
-      <a href="archives">Blog Archives</a>
-    </div>
-</nav>
-</div>
-	</div>
-        <footer id="footer" class="inner">
-          Copyright © 2013 - Debajyoti Mahanta - Powered by <a href="https://github.com/tommy351/hexo">Hexo</a><br>
-- Ported theme <a href="https://github.com/nuklly/hexo-theme-greyshade">GreyShade</a> -
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+        <!-- Header Section -->
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Debajyoti Mahanta</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-4">Senior Cloud Engineer & Tech Lead</p>
+            <div class="max-w-3xl mx-auto text-base md:text-lg text-gray-700">
+                <p>
+                    Highly experienced Senior Cloud Engineer and tech lead, driving innovation in distributed systems and Generative AI at Google. My recent work includes architecting a fully managed vector database for Google Cloud to power LLM-based Q&A, and previously, reducing cloud complexity through real-time data insights. Skilled across full-stack development and multi-cloud environments.
+                </p>
+            </div>
+            <div class="mt-6 flex justify-center space-x-6">
+                <a href="mailto:debajyoti.mahanta@gmail.com" class="text-gray-500 hover:text-[#4A7C59] transition">Email</a>
+                <a href="https://www.linkedin.com/in/dmahanta" target="_blank" class="text-gray-500 hover:text-[#4A7C59] transition">LinkedIn</a>
+                <a href="https://www.dmahanta.com" target="_blank" class="text-gray-500 hover:text-[#4A7C59] transition">Personal Site</a>
+            </div>
+        </header>
+
+        <!-- Static Timeline Section (Visual Only) -->
+        <section id="timeline-section" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">Career Journey Overview</h2>
+            <div class="relative">
+                <div class="border-t-2 border-gray-300 absolute top-1/2 w-full"></div>
+                <div id="timeline-nav" class="relative flex justify-between">
+                    <div class="timeline-item" data-target="google">
+                        <div class="text-center">
+                            <div class="timeline-dot w-4 h-4 bg-[#4A7C59] rounded-full mx-auto mb-2"></div>
+                            <span class="font-semibold text-[#4A7C59]">Google</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-target="aws">
+                        <div class="text-center">
+                            <div class="timeline-dot w-4 h-4 bg-gray-400 rounded-full mx-auto mb-2"></div>
+                            <span class="font-semibold">AWS</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-target="aon">
+                        <div class="text-center">
+                            <div class="timeline-dot w-4 h-4 bg-gray-400 rounded-full mx-auto mb-2"></div>
+                            <span class="font-semibold">Aon</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-target="accenture">
+                        <div class="text-center">
+                            <div class="timeline-dot w-4 h-4 bg-gray-400 rounded-full mx-auto mb-2"></div>
+                            <span class="font-semibold">Accenture</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-target="hcl">
+                        <div class="text-center">
+                            <div class="timeline-dot w-4 h-4 bg-gray-400 rounded-full mx-auto mb-2"></div>
+                            <span class="font-semibold">HCL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Details Section (All Visible) -->
+        <main id="experience-details" class="bg-white/50 rounded-lg p-6 md:p-10 shadow-sm space-y-12">
+            <h2 class="text-3xl font-bold text-center mb-10">Detailed Experience</h2>
+
+            <div id="google" class="content-section border-b border-gray-200 pb-8 last:border-b-0">
+                <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">Google</h3>
+                <p class="text-gray-600 mb-6">Senior Software Engineer | Aug 2019 - Present</p>
+                <div class="space-y-4 text-gray-800">
+                    <p><strong>Current Focus (Vector DB & GenAI):</strong> Architecting a fully managed vector database for Google Cloud, enabling LLM-based Q&A. This involves designing distributed infrastructure, implementing vector search libraries, and creating sophisticated filtering options for high-performance, secure, and scalable cloud operations.</p>
+                    <p><strong>Previous Role (Cloud Intelligence):</strong> Reduced cloud complexity and administrative toil by building real-time data ingestion channels. These channels deliver intelligent recommendations and insights to optimize cloud operations using machine learning.</p>
+                    <p><strong>Initial Role (BigQuery):</strong> Contributed to the BigQuery data warehouse platform, focusing on front-end integration with the query engine and optimizing stack performance for speed and efficiency.</p>
+                </div>
+            </div>
+            <div id="aws" class="content-section border-b border-gray-200 pb-8 last:border-b-0">
+                <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">Amazon Web Services (AWS)</h3>
+                <p class="text-gray-600 mb-6">Senior SDE / SDE | May 2016 - Aug 2019</p>
+                <div class="space-y-4 text-gray-800">
+                    <p>Designed, developed, and tested multi-threaded distributed systems for the Elastic Load Balancing (ELB) team, supporting Application, Classic, and Network Load Balancers.</p>
+                    <p>Architected scalable, robust systems for mission-critical workloads on millions of EC2 instances across 25+ AWS regions. Key projects included implementing TLS for NLB, building a next-generation plugin-based workflow engine, creating multi-tenant systems, and automating region builds.</p>
+                </div>
+            </div>
+            <div id="aon" class="content-section border-b border-gray-200 pb-8 last:border-b-0">
+                <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">Aon</h3>
+                <p class="text-gray-600 mb-6">Senior Application Team Lead | Oct 2012 - May 2016</p>
+                <div class="space-y-4 text-gray-800">
+                    <p>Led onshore and offshore teams to build a global knowledge sharing and content management platform.</p>
+                    <p>Spearheaded the migration of legacy backend systems to a modern micro-architecture. Designed and developed a Tool Recommendation Engine using Collaborative Filtering techniques.</p>
+                </div>
+            </div>
+            <div id="accenture" class="content-section border-b border-gray-200 pb-8 last:border-b-0">
+                <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">Accenture Technology Solutions</h3>
+                <p class="text-gray-600 mb-6">Team Lead | Apr 2010 - Oct 2012</p>
+                <div class="space-y-4 text-gray-800">
+                    <p>Managed the operation and delivery of a diverse application portfolio of over 20 applications.</p>
+                    <p>Pioneered the first agile development team for a major client, serving as Scrum Master for multiple projects. Designed and implemented distributed, scalable n-layer 3-tier architectures using Microsoft .NET.</p>
+                </div>
+            </div>
+            <div id="hcl" class="content-section">
+                <h3 class="text-2xl font-bold mb-1 text-[#4A7C59]">HCL Technologies</h3>
+                <p class="text-gray-600 mb-6">Senior SE / SE | Jul 2004 - Dec 2007</p>
+                <div class="space-y-4 text-gray-800">
+                    <p>Developed foundational experience in enterprise software, including creating Java-based connectors for Lotus Notes and SAP, a project showcased in an IBM On Demand Business case.</p>
+                    <p>Supported and developed critical systems such as an outage management system for a major US electrical utility and an IBM DB2-based Loan Processing System.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Skills & Visualization Section -->
+        <section class="mt-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Core Competencies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-[#4A7C59]">Cloud & Distributed Systems</h4>
+                        <p class="text-gray-700">AWS, Google Cloud, Microservices, System Architecture, Data Warehousing, ETL, Scalability, Fault Tolerance</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-[#4A7C59]">AI & Machine Learning</h4>
+                        <p class="text-700">Generative AI, LLM, Vector Databases, Machine Learning, Agent Development, CUDA</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2 text-[#4A7C59]">Backend & Full-Stack</h4>
+                        <p class="text-gray-700">Java, C#, JavaScript, Angular, Agile, Tech Leadership</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-center text-gray-600 mb-4">Experience Distribution by Company</p>
+                    <div class="chart-container">
+                        <canvas id="experienceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-20 pt-10 border-t border-gray-200">
+            <p class="text-gray-500">Built to showcase a career in technology and innovation.</p>
         </footer>
-        
-<script src="/js/slash.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
 
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // The timeline is now purely visual, no interactive JS needed for it.
+            // All content sections are displayed by default via HTML structure.
 
+            const ctx = document.getElementById('experienceChart').getContext('2d');
+            const experienceData = {
+                labels: ['Google', 'AWS', 'Aon', 'Accenture', 'HCL'],
+                datasets: [{
+                    label: 'Years of Experience',
+                    data: [6, 3.3, 3.6, 2.5, 3.5],
+                    backgroundColor: [
+                        'rgba(74, 124, 89, 0.7)',
+                        'rgba(107, 144, 128, 0.7)',
+                        'rgba(153, 179, 162, 0.7)',
+                        'rgba(199, 214, 204, 0.7)',
+                        'rgba(222, 230, 225, 0.7)'
+                    ],
+                    borderColor: [
+                        '#4A7C59',
+                        '#6B9080',
+                        '#99B3A2',
+                        '#C7D6CC',
+                        '#DEE6E1'
+                    ],
+                    borderWidth: 1
+                }]
+            };
 
+            new Chart(ctx, {
+                type: 'bar',
+                data: experienceData,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.raw.toFixed(1)} years`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Years'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
-
-
-
-      </div><!-- mid-col -->
-    </div><!-- container -->
 </body>
 </html>
